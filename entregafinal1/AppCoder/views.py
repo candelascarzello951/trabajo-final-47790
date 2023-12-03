@@ -34,3 +34,16 @@ def cursos_view(xx): # en las slides es `probandoTemplate``
     documento = plantilla.render(contexto)  # Aqui renderizamos la plantilla en documento
 
     return HttpResponse(documento) 
+
+def profesores_view(xx):
+    nombre = "Mariano Manuel"
+    apellido = "Barracovich"
+    ahora = datetime.now()
+    diccionario = {
+        'nombre': nombre,
+        'apellido': apellido,
+        "nacionalidad": "argentino",
+        "hora": ahora,
+        "ciudades_preferidas": ["Buenos Aires", "Lima", "San Pablo", "Trieste"]
+    }  # Para enviar al contexto
+    return render(xx, "AppCoder/padrecopy.html", diccionario) 
